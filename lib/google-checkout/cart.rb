@@ -228,7 +228,7 @@ module GoogleCheckout
             #Changed by Matt, now just set a flat fee for everything
             xml.tag!('shipping-methods') {
               if !@flat_rate_shipping.nil?        
-                xml.tag!('pickup', :name => @flat_rate_shipping[:name]) {
+                xml.tag!('flat-rate-shipping', :name => @flat_rate_shipping[:name]) {
                   xml.tag!('price', @flat_rate_shipping[:price], :currency => @flat_rate_shipping[:currency])
                 }
               end
