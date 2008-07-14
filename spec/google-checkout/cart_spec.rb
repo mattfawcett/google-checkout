@@ -8,6 +8,7 @@ describe GoogleCheckout, "Cart (generic)" do
       :description => "A few screencasts",
       :price => 9.00
     })
+    @cart.flat_rate_shipping({:price => '10.00', :currency => 'GBP', :name => 'Standard delivery'})
     GoogleCheckout.use_sandbox
   end
 
