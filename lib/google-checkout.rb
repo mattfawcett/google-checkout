@@ -50,10 +50,12 @@ module GoogleCheckout
 
   def self.sandbox?
     !@@live_system
+    true
   end
 
   def self.production?
     @@live_system
+    false
   end
 
   class APIError < Exception; end

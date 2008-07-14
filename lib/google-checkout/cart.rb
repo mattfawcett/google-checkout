@@ -103,7 +103,7 @@ module GoogleCheckout
         "Required keys missing: :price"
       end
 
-      @flat_rate_shipping = {:currency => 'USD'}.merge(frs_options)
+      @flat_rate_shipping = {:price => 'price', :currency => 'USD'}.merge(frs_options)
     end
 
     def empty?
@@ -157,7 +157,7 @@ module GoogleCheckout
       item
     end
 
-    # This is the important method; it generatest the XML call.
+    # This is the important method; it generates the XML call.
     # It's fairly lengthy, but trivial.  It follows the docs at
     # http://code.google.com/apis/checkout/developer/index.html#checkout_api
     #
@@ -224,9 +224,11 @@ module GoogleCheckout
             #      These are currently hard-coded for PeepCode.
             #      Does anyone care to send a patch to enhance
             #      this for more flexibility?
-            xml.tag!('shipping-methods') {
-              xml.tag!('pickup', :name =>'Digital Download') {
-                xml.tag!('price', "0.00", :currency => currency)
+            
+            #Changed by Matt, now just set a flat fee for everything
+            xml.tag!('shipping-methods') {        
+              xml.tag!('pickup', :name => 'Flat Rate') {
+                xml.tag!('price', @flat_rate_shipping[:price], :currency => @flat_rate_shipping[:currency])
               }
             }
           }
