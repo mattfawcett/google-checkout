@@ -11,6 +11,10 @@
         <region>CA</region>
         <postal-code>94141</postal-code>
         <country-code>US</country-code>
+				<structured-name>
+          <first-name>John</first-name>
+          <last-name>Smith</last-name>
+        </structured-name>
     </buyer-shipping-address>
     <buyer-billing-address>
         <contact-name>Bill Hu</contact-name>
@@ -20,6 +24,10 @@
         <region>CA</region>
         <postal-code>94043</postal-code>
         <country-code>US</country-code>
+				<structured-name>
+          <first-name>Bill</first-name>
+          <last-name>Hu</last-name>
+        </structured-name>
     </buyer-billing-address>
     <buyer-id>294873009217523</buyer-id>
     <fulfillment-order-state>NEW</fulfillment-order-state>

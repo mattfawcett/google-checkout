@@ -176,6 +176,58 @@ module GoogleCheckout
     def email_allowed
       (@doc/"buyer-marketing-preferences"/"email-allowed").to_boolean
     end
+    
+
+    def buyer_shipping_address_email
+      (@doc/"buyer-shipping-address"/"email").inner_html.to_s
+    end
+    def buyer_shipping_address_address1
+      (@doc/"buyer-shipping-address"/"address1").inner_html.to_s
+    end
+    def buyer_shipping_address_city
+      (@doc/"buyer-shipping-address"/"city").inner_html.to_s
+    end
+    def buyer_shipping_address_region
+      (@doc/"buyer-shipping-address"/"region").inner_html.to_s
+    end
+    def buyer_shipping_address_postal_code
+      (@doc/"buyer-shipping-address"/"postal-code").inner_html.to_s
+    end
+    def buyer_shipping_address_country_code
+      (@doc/"buyer-shipping-address"/"country-code").inner_html.to_s
+    end
+    def buyer_shipping_address_first_name
+      (@doc/"buyer-shipping-address"/"structured-name"/"first-name").inner_html.to_s
+    end
+    def buyer_shipping_address_last_name
+      (@doc/"buyer-shipping-address"/"structured-name"/"last-name").inner_html.to_s
+    end
+
+    def buyer_billing_address_email
+      (@doc/"buyer-billing-address"/"email").inner_html.to_s
+    end
+    def buyer_billing_address_address1
+      (@doc/"buyer-billing-address"/"address1").inner_html.to_s
+    end
+    def buyer_billing_address_city
+      (@doc/"buyer-billing-address"/"city").inner_html.to_s
+    end
+    def buyer_billing_address_region
+      (@doc/"buyer-billing-address"/"region").inner_html.to_s
+    end
+    def buyer_billing_address_postal_code
+      (@doc/"buyer-billing-address"/"postal-code").inner_html.to_s
+    end
+    def buyer_billing_address_country_code
+      (@doc/"buyer-billing-address"/"country-code").inner_html.to_s
+    end
+    def buyer_billing_address_first_name
+      (@doc/"buyer-billing-address"/"structured-name"/"first-name").inner_html.to_s
+    end
+    def buyer_billing_address_last_name
+      (@doc/"buyer-billing-address"/"structured-name"/"last-name").inner_html.to_s
+    end
+    
 
   end
 
