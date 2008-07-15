@@ -82,6 +82,24 @@ describe GoogleCheckout, "New Order Notification" do
     @notification.buyer_billing_address_postal_code.should == '94043'
     @notification.buyer_billing_address_country_code.should == 'US'
   end
+  
+  it "should have correct products" do 
+    @notification.items.length.should == 2
+    @notification.items[0][:item_name].should == 'Dry Food Pack'
+    @notification.items[0][:item_description].should == 'One pack of nutritious dried food for emergencies.'
+    @notification.items[0][:quantity].should == "1"
+    @notification.items[0][:unit_price].should be_kind_of(Money)
+    @notification.items[0][:unit_price].cents.should == 499
+    @notification.items[0][:unit_price].currency.should == 'USD'
+    @notification.items[0][:item_id].should == 'GGLAA1453'    
+    @notification.items[1][:item_name].should == 'Megasound 2GB MP3 Player'
+    @notification.items[1][:item_description].should == 'This portable MP3 player stores 500 songs.'
+    @notification.items[1][:quantity].should == "1"
+    @notification.items[1][:unit_price].should be_kind_of(Money)
+    @notification.items[1][:unit_price].cents.should == 17999
+    @notification.items[1][:unit_price].currency.should == 'USD'
+    @notification.items[1][:item_id].should == 'MGS2GBMP3'
+  end
 
 end
 

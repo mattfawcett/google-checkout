@@ -228,6 +228,18 @@ module GoogleCheckout
       (@doc/"buyer-billing-address"/"structured-name"/"last-name").inner_html.to_s
     end
     
+    def items
+      array = Array.new
+      x = (@doc/"shopping-cart"/"items"/"item").each do |item|
+        array << {:item_name => (item/"item-name").inner_html.to_s, 
+                  :item_description => (item/"item-description").inner_html.to_s,
+                  :item_id => (item/"merchant-item-id").inner_html.to_s,
+                  :unit_price => (item/"unit-price").inner_html.to_money,
+                  :quantity => (item/"quantity").inner_html.to_s}
+      end
+      array
+    end
+    
 
   end
 

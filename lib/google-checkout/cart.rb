@@ -84,6 +84,7 @@ module GoogleCheckout
       super(merchant_id, merchant_key)
       @contents = []
       items.each { |i| add_item i }
+      @merchant_private_data = {}
     end
     
     def set_merchant_private_data(merchant_private_data)
