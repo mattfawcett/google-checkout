@@ -66,6 +66,7 @@ describe GoogleCheckout, "New Order Notification" do
   it "should get email or buyer-shipping-address/email" do 
     @notification.buyer_shipping_address_first_name.should == 'John'
     @notification.buyer_shipping_address_last_name.should == 'Smith'
+    @notification.buyer_shipping_address_name.should == 'John Smith'
     @notification.buyer_shipping_address_address1.should == '10 Example Road'
     @notification.buyer_shipping_address_city.should == 'Sampleville'
     @notification.buyer_shipping_address_region.should == 'CA'
@@ -76,6 +77,7 @@ describe GoogleCheckout, "New Order Notification" do
   it  "should get buyer-billing-address/email" do
     @notification.buyer_billing_address_first_name.should == 'Bill'
     @notification.buyer_billing_address_last_name.should == 'Hu'
+    @notification.buyer_billing_address_name.should == 'Bill Hu'
     @notification.buyer_billing_address_address1.should == '99 Credit Lane'
     @notification.buyer_billing_address_city.should == 'Mountain View'
     @notification.buyer_billing_address_region.should == 'CA'

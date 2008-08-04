@@ -201,6 +201,9 @@ module GoogleCheckout
     end
     def buyer_shipping_address_last_name
       (@doc/"buyer-shipping-address"/"structured-name"/"last-name").inner_html.to_s
+    end    
+    def buyer_shipping_address_name 
+      (@doc/"buyer-shipping-address"/"contact-name").inner_html.to_s
     end
 
     def buyer_billing_address_email
@@ -226,6 +229,9 @@ module GoogleCheckout
     end
     def buyer_billing_address_last_name
       (@doc/"buyer-billing-address"/"structured-name"/"last-name").inner_html.to_s
+    end
+    def buyer_billing_address_name 
+      (@doc/"buyer-billing-address"/"contact-name").inner_html.to_s
     end
     
     def items
